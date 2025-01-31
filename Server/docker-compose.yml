@@ -28,6 +28,20 @@ services:
     build: 
       context: backend
       dockerfile: Dockerfile
+
+      watch:
+        # 1) Codeänderungen syncen
+        - action: sync
+          path: ./backend/
+          target: /backend
+
+        # 2) Dockerfile-Änderungen -> Rebuild
+        - action: rebuild
+          path: ./backend/Dockerfile
+
+        # 2) Requirements-Änderungen -> Rebuild
+        - action: rebuild
+          path: ./backend/requirements.txt
     env_file: .env
     networks:
       - backend_network
