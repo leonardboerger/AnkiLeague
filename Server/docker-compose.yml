@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  datenbank:
+    image: datenbank-i
+    container_name: ${DATENBANK_HOST}
+    restart: always
+    build:
+      context: datenbank
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DATENBANK_ROOT_PASSWORD}
+      - MYSQL_USER=${DATENBANK_USER}
+      - MYSQL_PASSWORD=${DATENBANK_PASSWORD}
+      - MYSQL_DATABASE=${DATENBANK_DATABASE}
+    networks:
+      - backend_network
+    ports:
+      - ${DATENBANK_PORT}:${DATENBANK_PORT}
+    volumes:
+      - db_data:/var/lib/mysql
+  
+  backend:
+    image: backend-i
+    container_name: ${BACKEND_HOST}
+    restart: always
+    build: 
+      context: backend
+      dockerfile: Dockerfile
+    env_file: .env
+    networks:
+      - backend_network
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    security_opt:
+      - label=type:container_runtime_t
+    depends_on:
+      - datenbank
+    volumes:
+      - media:/media
+
+networks:
+  backend_network:
+    driver: bridge
+
+volumes:
+  db_data:
+  media:
