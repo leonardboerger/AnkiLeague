@@ -23,3 +23,4 @@ EXPOSE 7999
 RUN python manage.py makemigrations
 
 CMD ["bash", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:7999"]
+# CMD ["tail", "-f", "/dev/null"]
