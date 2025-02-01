@@ -10,7 +10,7 @@ function App() {
         <Route 
           path='/'
           element={
-            <Leaderboard />
+            <Leaderboard route='/data_manager/requestdata/' />
           }
         />
       </Routes>

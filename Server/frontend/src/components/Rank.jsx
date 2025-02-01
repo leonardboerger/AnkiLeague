@@ -11,15 +11,15 @@ function Rank({rank, name, reviews, time, streak, retention}){
                     <p>Reviews</p>
                 </div>
                 <div>
-                    <p>{time}</p>
+                    <p>{(time/3600).toFixed(2)} h</p>
                     <p>Time</p>
                 </div>
                 <div>
-                    <p>{streak}</p>
+                    <p>{streak} d</p>
                     <p>Streak</p>
                 </div>
                 <div>
-                    <p>{retention}</p>
+                    <p>{retention}%</p>
                     <p>Retention</p>
                 </div>
             </div>

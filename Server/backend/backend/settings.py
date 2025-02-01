@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'data_manager',
     'user_manager',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware'
 ]
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 ROOT_URLCONF = 'backend.urls'
 

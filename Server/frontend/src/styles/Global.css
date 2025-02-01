@@ -44,6 +44,8 @@ header nav span.selected {
     display: flex;
     align-items: center;
 
+    margin: 0 0 15px 0;
+
     border-radius: 10px;
     background-color: #F4F4F4;
 }
@@ -51,6 +53,7 @@ header nav span.selected {
 .ranking-item h2 {
     font-size: 100px;
     line-height: 120px;
+    width: 90px;
     padding: 0 0px 0 30px;
     margin: 0;
 }
