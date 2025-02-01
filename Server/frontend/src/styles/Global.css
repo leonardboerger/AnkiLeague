@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+/** header **/
+header {
+    margin: 40px 0 30px 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav span:not(:first-child) {
+    padding-left: 25px;
+}
+
+header nav span {
+    user-select: none;
+}
+
+header nav span.selected {
+    font-weight: 700;
+}
+
+/** ranking **/
+.ranking {
+    margin: 0px 30px 100px 30px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: #F4F4F4;
+}
+
+.ranking-item h2 {
+    font-size: 100px;
+    line-height: 120px;
+    padding: 0 0px 0 30px;
+    margin: 0;
+}
+
+.ranking-item-wrapper {
+    padding: 0 0 0 30px;
+}
+
+.ranking-item-wrapper h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+
+.ranking-item-wrapper .wrapper {
+    display: flex;
+}
+
+.ranking-item-wrapper .wrapper div {
+    padding: 5px 20px 0 0;
+}
+
+.ranking-item-wrapper .wrapper div p {
+    margin: 0;
+}
+
+.ranking-item-wrapper .wrapper div p:first-child {
+    font-size: 20px;
+}
+
+.ranking-item-wrapper .wrapper div p:last-child {
+    font-size: 15px;
+    font-weight: 200;
+}
